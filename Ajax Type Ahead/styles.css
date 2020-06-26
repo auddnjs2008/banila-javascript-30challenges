@@ -1,0 +1,52 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #ffbe76;
+}
+
+input {
+  position: relative;
+  top: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  outline: none;
+  border: none;
+  padding: 0;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.suggestions {
+  list-style: none;
+  height: 100%;
+
+  padding: 0;
+}
+
+.names {
+  border: 1px solid black;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6e58d;
+}
+.names:nth-child(2n-1) {
+  transform: skewX(5deg);
+}
+.names:nth-child(2n) {
+  transform: skewX(-5deg);
+}
+
+.name {
+  margin-right: 50px;
+}
+
+.h1 {
+  background-color: #ff7979;
+  border-radius: 10px;
+  font-size: 20px;
+}
