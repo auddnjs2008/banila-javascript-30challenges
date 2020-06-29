@@ -1,0 +1,25 @@
+body {
+  height: 100vh;
+  background-color: #f39c12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inbox {
+  background-color: gray;
+}
+
+.inbox .item {
+  display: grid;
+  column-gap: 5px;
+  grid-template-columns: 50px 250px;
+  align-items: center;
+  border: 1px solid black;
+  color: white;
+}
+
+input:checked + p {
+  text-decoration: line-through;
+  text-decoration-color: black;
+}
