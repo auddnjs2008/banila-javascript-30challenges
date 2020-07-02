@@ -1,0 +1,56 @@
+html,
+body {
+  height: 100vh;
+  background-color: #487eb0;
+}
+
+.player {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.player__controls {
+  margin-top: -50px;
+  width: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.progress {
+  width: 640px;
+  height: 10px;
+  background-color: white;
+  flex: 10;
+  display: flex;
+  flex-basis: 100%;
+  cursor: ew-resize;
+  z-index: 1;
+  margin-bottom: 10px;
+}
+
+.progress__filled {
+  width: 50%;
+  height: 10px;
+  background: skyblue;
+  flex: 0;
+  flex-basis: 0%;
+}
+
+button {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+button:active {
+  transform: scale(0.9, 0.9);
+}
+
+.hidden {
+  display: none;
+}
