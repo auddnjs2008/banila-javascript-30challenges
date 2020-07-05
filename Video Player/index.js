@@ -1,5 +1,6 @@
 /*Get our Elements */
 const player = document.querySelector(".player");
+const controller = document.querySelector(".player__controls");
 const video = player.querySelector(".viewer");
 const progress = player.querySelector(".progress");
 const progressBar = player.querySelector(".progress__filled");
@@ -38,8 +39,13 @@ function scrub(e) {
   video.currentTime = scrubTime;
 }
 
+function handlePlayer() {
+  controller.classList.remove("hidden");
+}
 /*Hook up the event listenrs*/
 
+video.addEventListener("mouseover", handlePlayer);
+video.addEventListener("mouseout", () => controller.classList.add("hidden"));
 video.addEventListener("timeupdate", handleProgress);
 toggle.addEventListener("click", playButton);
 skipButtons.forEach((button) => button.addEventListener("click", skip));
