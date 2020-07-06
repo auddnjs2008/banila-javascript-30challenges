@@ -9,6 +9,8 @@ const toggle = player.querySelector(".toggle");
 const skipButtons = player.querySelectorAll("[data-skip]");
 const ranges = player.querySelectorAll(".player__slider");
 
+const expand = player.querySelector(".expand");
+
 /* Build out functions */
 function playButton() {
   if (video.paused) {
@@ -42,10 +44,28 @@ function scrub(e) {
 function handlePlayer() {
   controller.classList.remove("hidden");
 }
+
+function handleExpand() {
+  let isFullScreen =
+    document.fullscreenElement && document.fullscreenElement !== null;
+
+  if (isFullScreen) {
+    document.exitFullscreen();
+  } else {
+    video.requestFullscreen();
+  }
+}
+
 /*Hook up the event listenrs*/
 
+expand.addEventListener("click", handleExpand);
 video.addEventListener("mouseover", handlePlayer);
 video.addEventListener("mouseout", () => controller.classList.add("hidden"));
+
+controller.addEventListener("mouseover", handlePlayer);
+controller.addEventListener("mouseout", () =>
+  controller.classList.add("hidden")
+);
 video.addEventListener("timeupdate", handleProgress);
 toggle.addEventListener("click", playButton);
 skipButtons.forEach((button) => button.addEventListener("click", skip));
